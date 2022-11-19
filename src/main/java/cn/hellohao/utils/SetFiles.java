@@ -3,6 +3,7 @@ package cn.hellohao.utils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.text.DecimalFormat;
 
 public class SetFiles {
@@ -15,7 +16,7 @@ public class SetFiles {
         // todo 修改临时文件文件名
         File file = null;
         try {
-            file = File.createTempFile(fileName, prefix);
+            file = Files.createTempFile(fileName,prefix).toFile();
             multipartFile.transferTo(file);
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,7 +31,7 @@ public class SetFiles {
         // todo 修改临时文件文件名
         File file = null;
         try {
-            file = File.createTempFile(fileName, prefix);
+            file = Files.createTempFile(fileName,prefix).toFile();
             multipartFile.transferTo(file);
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,7 +48,7 @@ public class SetFiles {
         // todo 修改临时文件文件名
         File file = null;
         try {
-            file = File.createTempFile(fileName, prefix);
+            file = Files.createTempFile(fileName,prefix).toFile();
             multipartFile.transferTo(file);
         } catch (IOException e) {
             e.printStackTrace();
